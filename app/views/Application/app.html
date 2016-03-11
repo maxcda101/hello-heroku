@@ -28,9 +28,9 @@
     <h1>My App</h1>
     <button ng-click="upload()">Click upload</button>
     <script>
-        angular.module('MyApp',['angulartics', 'angulartics.google.analytics']).controller('AppCtrl',function(){
+        angular.module('MyApp',['angulartics', 'angulartics.google.analytics']).controller('AppCtrl',function($scope, $analytics){
             $scope.upload=function(){
-                console.log(Upload);
+                console.log("upload");
                 $analytics.eventTrack('Upload', {  category: 'Image', label: 'Avata' });
             }
         })  ;
