@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angulartics-google-analytics/0.1.4/angulartics-google-analytics.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angulartics/1.0.3/angulartics.min.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75013837-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body ng-app='MyApp' ng-controller="AppCtrl">
+    <h1>My App</h1>
+    <button ng-click="upload()">Click upload</button>
+    <script>
+        angular.module('MyApp',['angulartics', 'angulartics.google.analytics']).controller('AppCtrl',function(){
+            $scope.upload=function(){
+                console.log(Upload);
+                $analytics.eventTrack('Upload', {  category: 'Image', label: 'Avata' });
+            }
+        })  ;
+    </script>
+</body>
+    
+
+</html>
