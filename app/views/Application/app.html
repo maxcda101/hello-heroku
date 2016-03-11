@@ -27,11 +27,17 @@
 <body ng-app='MyApp' ng-controller="AppCtrl">
     <h1>My App</h1>
     <button ng-click="upload()">Click upload</button>
+    </br>
+    <button ng-click="dowload()">Dowload</button>
     <script>
         angular.module('MyApp',['angulartics', 'angulartics.google.analytics']).controller('AppCtrl',function($scope, $analytics){
             $scope.upload=function(){
                 console.log("upload");
                 $analytics.eventTrack('Upload', {  category: 'Image', label: 'Avata' });
+            };
+            $scope.dowload=function(){
+				console.log("dowload");
+                $analytics.eventTrack('Dowload', {  category: 'Video', label: 'xxx' });
             }
         })  ;
     </script>
